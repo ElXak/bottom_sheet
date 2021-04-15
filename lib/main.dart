@@ -21,11 +21,17 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => scaffoldKey.currentState
-            .showBottomSheet((context) => Container(color: Colors.red)),
-      ),
+      floatingActionButton: MyFloatingButton(),
+    );
+  }
+}
+
+class MyFloatingButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () => showBottomSheet(
+          context: context, builder: (context) => Container(color: Colors.red)),
     );
   }
 }
