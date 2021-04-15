@@ -16,16 +16,15 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeView extends StatelessWidget {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Builder(
-        builder: (context) => FloatingActionButton(
-          onPressed: () => showBottomSheet(
-            context: context,
-            builder: (context) => Container(color: Colors.red),
-          ),
-        ),
+      key: scaffoldKey,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => scaffoldKey.currentState
+            .showBottomSheet((context) => Container(color: Colors.red)),
       ),
     );
   }
