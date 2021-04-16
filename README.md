@@ -1,6 +1,6 @@
 # bottom_sheet
 
-A new Flutter project.
+Solving BottomSheet Scaffol issue with GlobalKey, CustomWidget and manipulating BottomSheet.
 
 ## Getting Started
 
